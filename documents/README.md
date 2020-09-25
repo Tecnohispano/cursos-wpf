@@ -1,0 +1,2 @@
+# Documentos
+Esta carpeta contiene los documentos relacionados con los requerimientos del sistema, la arquitectura de software, los casos de uso, manuales, entre otros recursos fundamentales para la descripción del proyecto.
