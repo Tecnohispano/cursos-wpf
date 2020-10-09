@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cursos_WPF"
         mc:Ignorable="d"
-        Title="HOME - Cursos WPF" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="Inicio - Cursos WPF" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <!-- Encabezado -->
         <Grid Background="#FFe0e1fc" Height="100" Margin="0,0">
@@ -16,9 +16,9 @@
             </Grid.ColumnDefinitions>
             <!-- Primer columna -->
             <StackPanel Orientation="Horizontal" Grid.Column="0">
-                <Label Content="INICIO" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10, 0"></Label>
-                <Label Content="CURSOS" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10, 0"></Label>
-                <Label Content="USUARIOS" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10, 0"></Label>
+                <Button FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0" Background="#FFe0e1fc" BorderBrush="#FFe0e1fc">INICIO</Button>
+                <Button FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0" Background="#FFe0e1fc" BorderBrush="#FFe0e1fc" Click="Cursos_Click">CURSOS</Button>
+                <Button FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0" Background="#FFe0e1fc" BorderBrush="#FFe0e1fc" Click="Usuarios_Click">USUARIOS</Button>
             </StackPanel>
 
             <!-- Segunda columna -->
