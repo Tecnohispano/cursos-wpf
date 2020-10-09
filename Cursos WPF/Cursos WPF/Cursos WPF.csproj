@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\CourseViewModel.cs" />
+    <Compile Include="ViewModel\UserTypeViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
     <Page Include="Home.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +81,33 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Course.cs">
+      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RelUserCourse.cs">
+      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tecnohispanodb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tecnohispanodb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tecnohispanodb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tecnohispanodb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserType.cs">
+      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +125,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\Tecnohispanodb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Tecnohispanodb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Tecnohispanodb.edmx.diagram">
+      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +146,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Tecnohispanodb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tecnohispanodb.Context.cs</LastGenOutput>
+      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Tecnohispanodb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
+      <LastGenOutput>Tecnohispanodb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

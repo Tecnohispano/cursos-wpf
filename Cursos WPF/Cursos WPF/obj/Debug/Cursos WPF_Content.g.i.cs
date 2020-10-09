@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logout.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispanodb.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispanodb.tt")]
 
 

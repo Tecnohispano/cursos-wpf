@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TecnohispanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.Course' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Link" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+            <PropertyRef Name="IsMonday" />
+            <PropertyRef Name="IsTuesday" />
+            <PropertyRef Name="IsWednesday" />
+            <PropertyRef Name="IsThursday" />
+            <PropertyRef Name="IsFriday" />
+            <PropertyRef Name="IsSaturday" />
+            <PropertyRef Name="IsSunday" />
+            <PropertyRef Name="ParticipantsLimit" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Link" Type="varchar(max)" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="IsMonday" Type="bit" Nullable="false" />
+          <Property Name="IsTuesday" Type="bit" Nullable="false" />
+          <Property Name="IsWednesday" Type="bit" Nullable="false" />
+          <Property Name="IsThursday" Type="bit" Nullable="false" />
+          <Property Name="IsFriday" Type="bit" Nullable="false" />
+          <Property Name="IsSaturday" Type="bit" Nullable="false" />
+          <Property Name="IsSunday" Type="bit" Nullable="false" />
+          <Property Name="ParticipantsLimit" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.RelUserCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RelUserCourse">
+          <Key>
+            <PropertyRef Name="RelUserCourseId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="RelUserCourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="HashedPassword" />
+            <PropertyRef Name="Salt" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Email" Type="varchar(max)" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HashedPassword" Type="varbinary" MaxLength="8000" Nullable="false" />
+          <Property Name="Salt" Type="varbinary" MaxLength="8000" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="TypeName" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TecnohispanoModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Course].[CourseId] AS [CourseId], 
+    [Course].[Name] AS [Name], 
+    [Course].[Link] AS [Link], 
+    [Course].[StartDate] AS [StartDate], 
+    [Course].[EndDate] AS [EndDate], 
+    [Course].[StartTime] AS [StartTime], 
+    [Course].[EndTime] AS [EndTime], 
+    [Course].[IsMonday] AS [IsMonday], 
+    [Course].[IsTuesday] AS [IsTuesday], 
+    [Course].[IsWednesday] AS [IsWednesday], 
+    [Course].[IsThursday] AS [IsThursday], 
+    [Course].[IsFriday] AS [IsFriday], 
+    [Course].[IsSaturday] AS [IsSaturday], 
+    [Course].[IsSunday] AS [IsSunday], 
+    [Course].[ParticipantsLimit] AS [ParticipantsLimit], 
+    [Course].[Active] AS [Active]
+    FROM [dbo].[Course] AS [Course]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RelUserCourse" EntityType="Self.RelUserCourse" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RelUserCourse].[RelUserCourseId] AS [RelUserCourseId], 
+    [RelUserCourse].[UserId] AS [UserId], 
+    [RelUserCourse].[CourseId] AS [CourseId]
+    FROM [dbo].[RelUserCourse] AS [RelUserCourse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[UserId] AS [UserId], 
+    [User].[TypeId] AS [TypeId], 
+    [User].[Name] AS [Name], 
+    [User].[Email] AS [Email], 
+    [User].[Username] AS [Username], 
+    [User].[HashedPassword] AS [HashedPassword], 
+    [User].[Salt] AS [Salt], 
+    [User].[Active] AS [Active]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserType" EntityType="Self.UserType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserType].[TypeId] AS [TypeId], 
+    [UserType].[TypeName] AS [TypeName], 
+    [UserType].[Active] AS [Active]
+    FROM [dbo].[UserType] AS [UserType]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TecnohispanoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Link" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+            <PropertyRef Name="IsMonday" />
+            <PropertyRef Name="IsTuesday" />
+            <PropertyRef Name="IsWednesday" />
+            <PropertyRef Name="IsThursday" />
+            <PropertyRef Name="IsFriday" />
+            <PropertyRef Name="IsSaturday" />
+            <PropertyRef Name="IsSunday" />
+            <PropertyRef Name="ParticipantsLimit" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="IsMonday" Type="Boolean" Nullable="false" />
+          <Property Name="IsTuesday" Type="Boolean" Nullable="false" />
+          <Property Name="IsWednesday" Type="Boolean" Nullable="false" />
+          <Property Name="IsThursday" Type="Boolean" Nullable="false" />
+          <Property Name="IsFriday" Type="Boolean" Nullable="false" />
+          <Property Name="IsSaturday" Type="Boolean" Nullable="false" />
+          <Property Name="IsSunday" Type="Boolean" Nullable="false" />
+          <Property Name="ParticipantsLimit" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelUserCourse">
+          <Key>
+            <PropertyRef Name="RelUserCourseId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="RelUserCourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="HashedPassword" />
+            <PropertyRef Name="Salt" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HashedPassword" Type="Binary" MaxLength="8000" FixedLength="false" Nullable="false" />
+          <Property Name="Salt" Type="Binary" MaxLength="8000" FixedLength="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="TypeName" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TecnohispanoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="RelUserCourses" EntityType="Self.RelUserCourse" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TecnohispanoModelStoreContainer" CdmEntityContainer="TecnohispanoEntities">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="TecnohispanoModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="IsMonday" ColumnName="IsMonday" />
+                <ScalarProperty Name="IsTuesday" ColumnName="IsTuesday" />
+                <ScalarProperty Name="IsWednesday" ColumnName="IsWednesday" />
+                <ScalarProperty Name="IsThursday" ColumnName="IsThursday" />
+                <ScalarProperty Name="IsFriday" ColumnName="IsFriday" />
+                <ScalarProperty Name="IsSaturday" ColumnName="IsSaturday" />
+                <ScalarProperty Name="IsSunday" ColumnName="IsSunday" />
+                <ScalarProperty Name="ParticipantsLimit" ColumnName="ParticipantsLimit" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelUserCourses">
+            <EntityTypeMapping TypeName="TecnohispanoModel.RelUserCourse">
+              <MappingFragment StoreEntitySet="RelUserCourse">
+                <ScalarProperty Name="RelUserCourseId" ColumnName="RelUserCourseId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TecnohispanoModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="TecnohispanoModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
