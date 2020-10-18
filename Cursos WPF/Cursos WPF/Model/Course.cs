@@ -28,7 +28,7 @@ namespace Cursos_WPF.Model
         public bool IsFriday { get; set; }
         public bool IsSaturday { get; set; }
         public bool IsSunday { get; set; }
-        public bool ParticipantsLimit { get; set; }
+        public int ParticipantsLimit { get; set; }
         public bool Active { get; set; }
     }
 }

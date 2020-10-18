@@ -10,21 +10,6 @@ warning 6002: The table/view 'Tecnohispano.dbo.Course' does not have a primary k
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseId" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="Link" />
-            <PropertyRef Name="StartDate" />
-            <PropertyRef Name="EndDate" />
-            <PropertyRef Name="StartTime" />
-            <PropertyRef Name="EndTime" />
-            <PropertyRef Name="IsMonday" />
-            <PropertyRef Name="IsTuesday" />
-            <PropertyRef Name="IsWednesday" />
-            <PropertyRef Name="IsThursday" />
-            <PropertyRef Name="IsFriday" />
-            <PropertyRef Name="IsSaturday" />
-            <PropertyRef Name="IsSunday" />
-            <PropertyRef Name="ParticipantsLimit" />
-            <PropertyRef Name="Active" />
           </Key>
           <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar(max)" Nullable="false" />
@@ -40,7 +25,7 @@ warning 6002: The table/view 'Tecnohispano.dbo.Course' does not have a primary k
           <Property Name="IsFriday" Type="bit" Nullable="false" />
           <Property Name="IsSaturday" Type="bit" Nullable="false" />
           <Property Name="IsSunday" Type="bit" Nullable="false" />
-          <Property Name="ParticipantsLimit" Type="bit" Nullable="false" />
+          <Property Name="ParticipantsLimit" Type="int" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -91,24 +76,6 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
         </EntityType>
         <EntityContainer Name="TecnohispanoModelStoreContainer">
           <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Course].[CourseId] AS [CourseId], 
-    [Course].[Name] AS [Name], 
-    [Course].[Link] AS [Link], 
-    [Course].[StartDate] AS [StartDate], 
-    [Course].[EndDate] AS [EndDate], 
-    [Course].[StartTime] AS [StartTime], 
-    [Course].[EndTime] AS [EndTime], 
-    [Course].[IsMonday] AS [IsMonday], 
-    [Course].[IsTuesday] AS [IsTuesday], 
-    [Course].[IsWednesday] AS [IsWednesday], 
-    [Course].[IsThursday] AS [IsThursday], 
-    [Course].[IsFriday] AS [IsFriday], 
-    [Course].[IsSaturday] AS [IsSaturday], 
-    [Course].[IsSunday] AS [IsSunday], 
-    [Course].[ParticipantsLimit] AS [ParticipantsLimit], 
-    [Course].[Active] AS [Active]
-    FROM [dbo].[Course] AS [Course]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="RelUserCourse" EntityType="Self.RelUserCourse" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -145,21 +112,6 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseId" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="Link" />
-            <PropertyRef Name="StartDate" />
-            <PropertyRef Name="EndDate" />
-            <PropertyRef Name="StartTime" />
-            <PropertyRef Name="EndTime" />
-            <PropertyRef Name="IsMonday" />
-            <PropertyRef Name="IsTuesday" />
-            <PropertyRef Name="IsWednesday" />
-            <PropertyRef Name="IsThursday" />
-            <PropertyRef Name="IsFriday" />
-            <PropertyRef Name="IsSaturday" />
-            <PropertyRef Name="IsSunday" />
-            <PropertyRef Name="ParticipantsLimit" />
-            <PropertyRef Name="Active" />
           </Key>
           <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -175,7 +127,7 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
           <Property Name="IsFriday" Type="Boolean" Nullable="false" />
           <Property Name="IsSaturday" Type="Boolean" Nullable="false" />
           <Property Name="IsSunday" Type="Boolean" Nullable="false" />
-          <Property Name="ParticipantsLimit" Type="Boolean" Nullable="false" />
+          <Property Name="ParticipantsLimit" Type="Int32" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="RelUserCourse">

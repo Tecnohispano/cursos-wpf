@@ -35,9 +35,112 @@
 
         </Grid>
         <Separator Height="50" Margin="20,0"/>
+        
         <!-- CONTENIDO -->
         <Grid Height="550" Margin="10,0">
+            <StackPanel>
+                <Label Content="Gestión de Cursos" FontSize="30" FontWeight="Bold"></Label>
+                <!-- Formulario de creacion -->
+                <Grid Background="LightBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Primer columna -->
+                    <StackPanel Grid.Column="0" Margin="10">
+                        <Label Content="Nombre del curso"></Label>
+                        <TextBox x:Name="Nombre" ></TextBox>
+                        <Grid Margin="0,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Fecha inicio"></Label>
+                                <DatePicker x:Name="StartDate" FirstDayOfWeek="Monday"></DatePicker>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <Label Content="Fecha fin"></Label>
+                                <DatePicker x:Name="EndDate"></DatePicker>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    
+                    <!-- Segunda columna -->
+                    <StackPanel Grid.Column="1" Margin="10">
+                        <Label Content="Enlace"></Label>
+                        <TextBox x:Name="Enlace"></TextBox>
+                        <Grid Margin="0, 20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Hora inicio"></Label>
+                                <ComboBox x:Name="StartTime" >
+                                    <ComboBoxItem>08:00</ComboBoxItem>
+                                    <ComboBoxItem>09:00</ComboBoxItem>
+                                    <ComboBoxItem>10:00</ComboBoxItem>
+                                    <ComboBoxItem>11:00</ComboBoxItem>
+                                    <ComboBoxItem>12:00</ComboBoxItem>
+                                    <ComboBoxItem>13:00</ComboBoxItem>
+                                    <ComboBoxItem>14:00</ComboBoxItem>
+                                    <ComboBoxItem>15:00</ComboBoxItem>
+                                    <ComboBoxItem>16:00</ComboBoxItem>
+                                    <ComboBoxItem>17:00</ComboBoxItem>
+                                    <ComboBoxItem>18:00</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <Label Content="Hora fin"></Label>
+                                <ComboBox x:Name="EndTime">
+                                    <ComboBoxItem>08:00</ComboBoxItem>
+                                    <ComboBoxItem>09:00</ComboBoxItem>
+                                    <ComboBoxItem>10:00</ComboBoxItem>
+                                    <ComboBoxItem>11:00</ComboBoxItem>
+                                    <ComboBoxItem>12:00</ComboBoxItem>
+                                    <ComboBoxItem>13:00</ComboBoxItem>
+                                    <ComboBoxItem>14:00</ComboBoxItem>
+                                    <ComboBoxItem>15:00</ComboBoxItem>
+                                    <ComboBoxItem>16:00</ComboBoxItem>
+                                    <ComboBoxItem>17:00</ComboBoxItem>
+                                    <ComboBoxItem>18:00</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    
+                    <!-- Tercer columna -->
+                    <StackPanel Grid.Column="2" Margin="10">
+                        <Label Content="Días de la semana"></Label>
+                        <CheckBox x:Name="ChkLunes">Lunes</CheckBox>
+                        <CheckBox x:Name="ChkMartes">Martes</CheckBox>
+                        <CheckBox x:Name="ChkMiercoles">Miércoles</CheckBox>
+                        <CheckBox x:Name="ChkJueves">Jueves</CheckBox>
+                        <CheckBox x:Name="ChkViernes">Viernes</CheckBox>
+                        <CheckBox x:Name="ChkSabado">Sábado</CheckBox>
+                        <CheckBox x:Name="ChkDomingo">Domingo</CheckBox>
+                    </StackPanel>
+                    
+                    <!-- Cuarta columna -->
+                    <StackPanel Grid.Column="3" Margin="10">
+                        <Label Content="Límite de participantes"></Label>
+                        <TextBox x:Name="LimiteParticipantes" PreviewTextInput="LimiteParticipantes_PreviewTextInput"></TextBox>
+                    </StackPanel>
+                    
+                    <!-- Quinta columna -->
+                    <Button x:Name="btnAgregar" Grid.Column="4" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="btnAgregar_Click">Agregar</Button>
+                </Grid>
 
+                <!-- Tabla de cursos -->
+                <Grid >
+                    <Label Content="Cursos del sistema" FontSize="15"></Label>
+                </Grid>
+            </StackPanel>
         </Grid>
 
         <!-- Footer -->

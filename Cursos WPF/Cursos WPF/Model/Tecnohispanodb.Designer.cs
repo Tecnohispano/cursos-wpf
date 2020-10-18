@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\Model\Tecnohispanodb.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\Model\TecnohispanoDb.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

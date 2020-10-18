@@ -67,6 +67,33 @@
     <Compile Include="Cursos.xaml.cs">
       <DependentUpon>Cursos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Course.cs">
+      <DependentUpon>TecnohispanoDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RelUserCourse.cs">
+      <DependentUpon>TecnohispanoDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TecnohispanoDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TecnohispanoDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TecnohispanoDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TecnohispanoDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TecnohispanoDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TecnohispanoDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>TecnohispanoDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserType.cs">
+      <DependentUpon>TecnohispanoDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.xaml.cs">
       <DependentUpon>Usuarios.xaml</DependentUpon>
     </Compile>
@@ -95,33 +122,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Course.cs">
-      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\RelUserCourse.cs">
-      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Tecnohispanodb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tecnohispanodb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Tecnohispanodb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Tecnohispanodb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\User.cs">
-      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\UserType.cs">
-      <DependentUpon>Tecnohispanodb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,12 +139,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Tecnohispanodb.edmx">
+    <EntityDeploy Include="Model\TecnohispanoDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Tecnohispanodb.Designer.cs</LastGenOutput>
+      <LastGenOutput>TecnohispanoDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Tecnohispanodb.edmx.diagram">
-      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
+    <None Include="Model\TecnohispanoDb.edmx.diagram">
+      <DependentUpon>TecnohispanoDb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -163,19 +163,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\Tecnohispanodb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Tecnohispanodb.Context.cs</LastGenOutput>
-      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\Tecnohispanodb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Tecnohispanodb.edmx</DependentUpon>
-      <LastGenOutput>Tecnohispanodb.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Model\TecnohispanoDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TecnohispanoDb.edmx</DependentUpon>
+      <LastGenOutput>TecnohispanoDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\TecnohispanoDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TecnohispanoDb.edmx</DependentUpon>
+      <LastGenOutput>TecnohispanoDb.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

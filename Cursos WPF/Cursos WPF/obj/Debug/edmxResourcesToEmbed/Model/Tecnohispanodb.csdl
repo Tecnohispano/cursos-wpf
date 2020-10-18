@@ -3,21 +3,6 @@
   <EntityType Name="Course">
     <Key>
       <PropertyRef Name="CourseId" />
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="Link" />
-      <PropertyRef Name="StartDate" />
-      <PropertyRef Name="EndDate" />
-      <PropertyRef Name="StartTime" />
-      <PropertyRef Name="EndTime" />
-      <PropertyRef Name="IsMonday" />
-      <PropertyRef Name="IsTuesday" />
-      <PropertyRef Name="IsWednesday" />
-      <PropertyRef Name="IsThursday" />
-      <PropertyRef Name="IsFriday" />
-      <PropertyRef Name="IsSaturday" />
-      <PropertyRef Name="IsSunday" />
-      <PropertyRef Name="ParticipantsLimit" />
-      <PropertyRef Name="Active" />
     </Key>
     <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -33,7 +18,7 @@
     <Property Name="IsFriday" Type="Boolean" Nullable="false" />
     <Property Name="IsSaturday" Type="Boolean" Nullable="false" />
     <Property Name="IsSunday" Type="Boolean" Nullable="false" />
-    <Property Name="ParticipantsLimit" Type="Boolean" Nullable="false" />
+    <Property Name="ParticipantsLimit" Type="Int32" Nullable="false" />
     <Property Name="Active" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="RelUserCourse">
