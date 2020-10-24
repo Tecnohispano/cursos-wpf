@@ -110,6 +110,12 @@ namespace Cursos_WPF
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);
 
+                // 4. Refresh current window
+                Cursos NewCursos = new Cursos();
+                NewCursos.Show();
+
+                this.Close();
+
             }
             catch (Exception ex)
             {

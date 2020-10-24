@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispanodb.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispanodb.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispano.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/tecnohispano.tt")]
 
 

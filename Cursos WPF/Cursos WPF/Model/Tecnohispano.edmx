@@ -5,8 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="TecnohispanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Tecnohispano.dbo.Course' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseId" />
@@ -75,8 +73,7 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="TecnohispanoModelStoreContainer">
-          <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" store:Schema="dbo">
-          </EntitySet>
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RelUserCourse" EntityType="Self.RelUserCourse" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [RelUserCourse].[RelUserCourseId] AS [RelUserCourseId], 
