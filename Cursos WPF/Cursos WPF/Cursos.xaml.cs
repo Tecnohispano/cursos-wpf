@@ -10,15 +10,18 @@ namespace Cursos_WPF
     /// </summary>
     public partial class Cursos : Window
     {
-        private TecnohispanoEntities TecnohispanoDb;
+        private readonly TecnohispanoEntities TecnohispanoDb;
         private static readonly Regex ONLY_NUMBERS = new Regex("[^0-9]+");
 
+        /// <summary>
+        /// Constructor.
+        /// It creates a new TecnohispanoEntities so database operations can be performed.
+        /// </summary>
         public Cursos()
         {
             InitializeComponent();
             TecnohispanoDb = new TecnohispanoEntities();
         }
-
 
         /// <summary>
         /// This function opens the Home window and closes the current one.
@@ -53,32 +56,32 @@ namespace Cursos_WPF
         /// <param name="e"></param>
         private void LimiteParticipantes_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-            e.Handled = !IsTextAllowed(e.Text);
+            if (!ONLY_NUMBERS.IsMatch(e.Text))
+            {
+                e.Handled = false;
+            } else
+            {
+                e.Handled = true;
+            }
         }
 
-        private static bool IsTextAllowed(string text)
-        {
-            return !ONLY_NUMBERS.IsMatch(text);
-        }
-
-        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// This function creates a new Course. 
+        /// It includes the corresponding validations and error messages handling.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Agregar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // 2. Apply validations
-                if (StartDate.SelectedDate == null)
+                // 1. Apply validations
+                if (!ValidForm())
                 {
-                    MessageBoxResult message = MessageBox.Show("Por favor ingresa una fecha de inicio",
-                        "Confirmation",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-
                     return;
                 }
 
-                // TODO: Add more validations.
-
-                // 1. Get all data from the form
+                // 2. Get all data from the form
                 Course NewCourse = new Course()
                 {
                     CourseId = 3,
@@ -107,12 +110,103 @@ namespace Cursos_WPF
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);
 
-                return;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        /// <summary>
+        /// This function validates the form and returns True when all fields are correct.
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidForm()
+        {
+            if (Nombre.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor ingresa un nombre para el curso",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (Enlace.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor ingresa un enlace para el curso",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            bool IsURLValid = Uri.TryCreate(Enlace.Text, UriKind.Absolute, out Uri uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            if (!IsURLValid)
+            {
+                MessageBox.Show("Por favor ingresa un enlace correcto",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (StartDate.SelectedDate == null)
+            {
+                MessageBox.Show("Por favor ingresa una fecha de inicio",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (EndDate.SelectedDate == null)
+            {
+                MessageBox.Show("Por favor ingresa una fecha de fin",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (StartDate.SelectedDate > EndDate.SelectedDate)
+            {
+                MessageBox.Show("El periodo de fechas no es correcto",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (StartTime.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor ingresa una hora de inicio para el curso",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            if (EndTime.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor ingresa una hora de fin para el curso",
+                        "Campo faltante",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

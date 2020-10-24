@@ -133,7 +133,7 @@
                     </StackPanel>
                     
                     <!-- Quinta columna -->
-                    <Button x:Name="btnAgregar" Grid.Column="4" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="btnAgregar_Click">Agregar</Button>
+                    <Button x:Name="btnAgregar" Grid.Column="4" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="Agregar_Click">Agregar</Button>
                 </Grid>
 
                 <!-- Tabla de cursos -->
