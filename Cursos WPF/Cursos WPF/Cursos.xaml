@@ -138,7 +138,10 @@
 
                 <!-- Tabla de cursos -->
                 <Grid >
-                    <Label Content="Cursos del sistema" FontSize="15"></Label>
+                    <StackPanel Margin="0, 20, 0, 0">
+                        <Label Content="Cursos del sistema" FontSize="15" FontWeight="Bold"></Label>
+                        <DataGrid x:Name="CursosList" AutoGenerateColumns="True" />
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Grid>

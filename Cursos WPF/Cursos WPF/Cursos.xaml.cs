@@ -1,7 +1,11 @@
 ﻿using Cursos_WPF.Model;
+using Cursos_WPF.ViewModel;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace Cursos_WPF
 {
@@ -21,6 +25,8 @@ namespace Cursos_WPF
         {
             InitializeComponent();
             TecnohispanoDb = new TecnohispanoEntities();
+
+            CursosList.ItemsSource = GetCourses();
         }
 
         /// <summary>
@@ -213,6 +219,45 @@ namespace Cursos_WPF
             }
 
             return true;
+        }
+
+
+        private List<CourseViewModel> GetCourses()
+        {
+            try
+            {
+                List<CourseViewModel> Courses = new List<CourseViewModel>();
+
+                foreach (Course Curso in TecnohispanoDb.Courses)
+                {
+                    CourseViewModel _Curso = new CourseViewModel()
+                    {
+                        CourseId = Curso.CourseId,
+                        Name = Curso.Name,
+                        Link = Curso.Link,
+                        StartDate = Curso.StartDate,
+                        EndDate = Curso.EndDate,
+                        //StartTime = StartTime,
+                        //EndTime = EndTime,
+                        IsMonday = Curso.IsMonday,
+                        IsTuesday = Curso.IsTuesday,
+                        IsWednesday = Curso.IsWednesday,
+                        IsThursday = Curso.IsThursday,
+                        IsFriday = Curso.IsFriday,
+                        IsSaturday = Curso.IsSaturday,
+                        IsSunday = Curso.IsSunday,
+                        ParticipantsLimit = Curso.ParticipantsLimit
+                    };
+
+                    Courses.Add(_Curso);
+                }
+
+                return Courses;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
