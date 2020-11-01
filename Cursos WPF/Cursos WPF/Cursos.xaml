@@ -133,7 +133,11 @@
                     </StackPanel>
                     
                     <!-- Quinta columna -->
-                    <Button x:Name="btnAgregar" Grid.Column="4" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="Agregar_Click">Agregar</Button>
+                    <StackPanel Grid.Column="4">
+                        <Button x:Name="btnAgregar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="Agregar_Click">Agregar</Button>
+                        <Button x:Name="btnEditar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Blue" Foreground="White" Click="Editar_Confirm_Click" Visibility="Hidden">Editar</Button>
+                        <Button x:Name="btnCancelar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="#fe1a1a" Foreground="White" Click="Editar_Cancel_Click" Visibility="Hidden">Cancelar</Button>
+                    </StackPanel>
                 </Grid>
 
                 <!-- Tabla de cursos -->

@@ -72,65 +72,6 @@ namespace Cursos_WPF
         }
 
         /// <summary>
-        /// This function creates a new Course. 
-        /// It includes the corresponding validations and error messages handling.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Agregar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                // 1. Apply validations
-                if (!ValidForm())
-                {
-                    return;
-                }
-
-                // 2. Get all data from the form
-                Course NewCourse = new Course()
-                {
-                    CourseId = 3,
-                    Name = Nombre.Text,
-                    Link = Enlace.Text,
-                    StartDate = StartDate.SelectedDate.Value,
-                    EndDate = EndDate.SelectedDate.Value,
-                    StartTime = TimeSpan.Parse(StartTime.Text),
-                    EndTime = TimeSpan.Parse(EndTime.Text),
-                    IsMonday = ChkLunes.IsChecked.Value,
-                    IsTuesday = ChkMartes.IsChecked.Value,
-                    IsWednesday = ChkMiercoles.IsChecked.Value,
-                    IsThursday = ChkJueves.IsChecked.Value,
-                    IsFriday = ChkViernes.IsChecked.Value,
-                    IsSaturday = ChkSabado.IsChecked.Value,
-                    IsSunday = ChkDomingo.IsChecked.Value,
-                    ParticipantsLimit = Int32.Parse(LimiteParticipantes.Text),
-                    Active = true
-                };
-
-                // 3. Save to database
-                TecnohispanoDb.Courses.Add(NewCourse);
-                TecnohispanoDb.SaveChanges();
-
-                MessageBoxResult SuccessMessage = MessageBox.Show("Curso agregado exitosamente",
-                        "Curso agregado",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-
-                // 4. Refresh current window
-                Cursos NewCursos = new Cursos();
-                NewCursos.Show();
-
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        /// <summary>
         /// This function validates the form and returns True when all fields are correct.
         /// </summary>
         /// <returns></returns>
@@ -265,6 +206,70 @@ namespace Cursos_WPF
             }
         }
 
+        /// <summary>
+        /// This function creates a new Course. 
+        /// It includes the corresponding validations and error messages handling.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Agregar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // 1. Apply validations
+                if (!ValidForm())
+                {
+                    return;
+                }
+
+                // 2. Get all data from the form
+                Course NewCourse = new Course()
+                {
+                    CourseId = 3,
+                    Name = Nombre.Text,
+                    Link = Enlace.Text,
+                    StartDate = StartDate.SelectedDate.Value,
+                    EndDate = EndDate.SelectedDate.Value,
+                    StartTime = TimeSpan.Parse(StartTime.Text),
+                    EndTime = TimeSpan.Parse(EndTime.Text),
+                    IsMonday = ChkLunes.IsChecked.Value,
+                    IsTuesday = ChkMartes.IsChecked.Value,
+                    IsWednesday = ChkMiercoles.IsChecked.Value,
+                    IsThursday = ChkJueves.IsChecked.Value,
+                    IsFriday = ChkViernes.IsChecked.Value,
+                    IsSaturday = ChkSabado.IsChecked.Value,
+                    IsSunday = ChkDomingo.IsChecked.Value,
+                    ParticipantsLimit = Int32.Parse(LimiteParticipantes.Text),
+                    Active = true
+                };
+
+                // 3. Save to database
+                TecnohispanoDb.Courses.Add(NewCourse);
+                TecnohispanoDb.SaveChanges();
+
+                MessageBoxResult SuccessMessage = MessageBox.Show("Curso agregado exitosamente",
+                        "Curso agregado",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                // 4. Refresh current window
+                Cursos NewCursos = new Cursos();
+                NewCursos.Show();
+
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// This function fills out the form with a selected course to be edited.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Editar_Click(object sender, RoutedEventArgs e)
         {
             CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
@@ -273,8 +278,42 @@ namespace Cursos_WPF
 
             // 2. Fill out the form
 
-            // 3. Show Edit button and hide Add button.
+            // 3. Show Edit and Cancel button and hide Add button.
+            btnEditar.Visibility = Visibility.Visible;
+            btnCancelar.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Hidden;
+        }
+
+        /// <summary>
+        /// This function edits the selected course.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Editar_Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO: Edit the selected course.
+
+            // 1. Get info from form.
+
+            // 2. Validate fields.
+
+            // 3. Update course from database.
+
+            // 4. Refresh current window.
+        }
+
+        /// <summary>
+        /// This function clears the course form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Editar_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            // 1. Refresh current window to clear form.
+            Cursos NewCursos = new Cursos();
+            NewCursos.Show();
+
+            this.Close();
         }
 
         /// <summary>
