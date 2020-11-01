@@ -104,7 +104,8 @@ namespace Cursos_WPF
                     IsFriday = ChkViernes.IsChecked.Value,
                     IsSaturday = ChkSabado.IsChecked.Value,
                     IsSunday = ChkDomingo.IsChecked.Value,
-                    ParticipantsLimit = Int32.Parse(LimiteParticipantes.Text)
+                    ParticipantsLimit = Int32.Parse(LimiteParticipantes.Text),
+                    Active = true
                 };
 
                 // 3. Save to database
@@ -221,7 +222,10 @@ namespace Cursos_WPF
             return true;
         }
 
-
+        /// <summary>
+        /// This function gets all the current courses used by the grid.
+        /// </summary>
+        /// <returns></returns>
         private List<CourseViewModel> GetCourses()
         {
             try
@@ -235,10 +239,10 @@ namespace Cursos_WPF
                         CourseId = Curso.CourseId,
                         Name = Curso.Name,
                         Link = Curso.Link,
-                        StartDate = Curso.StartDate,
-                        EndDate = Curso.EndDate,
-                        //StartTime = StartTime,
-                        //EndTime = EndTime,
+                        StartDate = Curso.StartDate.ToLongDateString(),
+                        EndDate = Curso.EndDate.ToLongDateString(),
+                        StartTime = Curso.StartTime.ToString(),
+                        EndTime = Curso.EndTime.ToString(),
                         IsMonday = Curso.IsMonday,
                         IsTuesday = Curso.IsTuesday,
                         IsWednesday = Curso.IsWednesday,
@@ -246,7 +250,8 @@ namespace Cursos_WPF
                         IsFriday = Curso.IsFriday,
                         IsSaturday = Curso.IsSaturday,
                         IsSunday = Curso.IsSunday,
-                        ParticipantsLimit = Curso.ParticipantsLimit
+                        ParticipantsLimit = Curso.ParticipantsLimit,
+                        Active = Curso.Active
                     };
 
                     Courses.Add(_Curso);
@@ -258,6 +263,20 @@ namespace Cursos_WPF
             {
                 throw ex;
             }
+        }
+
+        private void Editar_Click(object sender, RoutedEventArgs e)
+        {
+            CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
+
+            // TODO: Edit the retrieved course.
+        }
+
+        private void Eliminar_Click(object sender, RoutedEventArgs e)
+        {
+            CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
+
+            // TODO: Delete the retrieved course.
         }
     }
 }

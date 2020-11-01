@@ -140,7 +140,38 @@
                 <Grid >
                     <StackPanel Margin="0, 20, 0, 0">
                         <Label Content="Cursos del sistema" FontSize="15" FontWeight="Bold"></Label>
-                        <DataGrid x:Name="CursosList" AutoGenerateColumns="True" />
+                        <DataGrid x:Name="CursosList" IsReadOnly="True" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Enlace" Binding="{Binding Link}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Fecha inicio" Binding="{Binding StartDate}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Fecha fin" Binding="{Binding EndDate}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Hora inicio" Binding="{Binding StartTime}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Hora fin" Binding="{Binding EndTime}"></DataGridTextColumn>
+                                <DataGridCheckBoxColumn Header="Lunes" Binding="{Binding IsMonday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Martes" Binding="{Binding IsTuesday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Miércoles" Binding="{Binding IsWednesday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Jueves" Binding="{Binding IsThursday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Viernes" Binding="{Binding IsFriday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Sábado" Binding="{Binding IsSaturday}"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Header="Domingo" Binding="{Binding IsSunday}"></DataGridCheckBoxColumn>
+                                <DataGridTextColumn Header="Límite participantes" Binding="{Binding ParticipantsLimit}"></DataGridTextColumn>
+                                <DataGridCheckBoxColumn Header="Curso activo" Binding="{Binding Active}"></DataGridCheckBoxColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.Header>
+                                        <TextBlock>Acciones</TextBlock>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Button  Click="Editar_Click" Content="Editar" Background="LightBlue" Margin="5"/>
+                                                <Button  Click="Eliminar_Click" Content="Eliminar" Background="#fe1a1a" Margin="5" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </Grid>
             </StackPanel>

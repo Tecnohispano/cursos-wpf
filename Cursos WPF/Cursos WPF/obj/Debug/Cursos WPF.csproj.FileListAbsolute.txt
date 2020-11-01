@@ -22,3 +22,4 @@ C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debu
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.CopyComplete
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.exe
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.pdb
+C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csprojAssemblyReference.cache
