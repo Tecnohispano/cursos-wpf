@@ -269,14 +269,56 @@ namespace Cursos_WPF
         {
             CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
 
-            // TODO: Edit the retrieved course.
+            // 1. Find course in database
+
+            // 2. Fill out the form
+
+            // 3. Show Edit button and hide Add button.
+            btnAgregar.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// This function deletes a selected course.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
-            CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
+            try
+            {
+                // 1. Get the current course ID to be deleted.
+                CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
 
-            // TODO: Delete the retrieved course.
+                // 2. Find the course in the database.
+                Course Course = TecnohispanoDb.Courses.Find(Curso.CourseId);
+
+                // TODO: Validate if the course has no users or any additional validation.
+
+                MessageBoxResult DeleteMessage = MessageBox.Show("¿Estás seguro de querer eliminar el curso " + Course.Name + "?",
+                            "Eliminar curso",
+                            MessageBoxButton.YesNo,
+                            MessageBoxImage.Warning);
+
+                // 3. Delete the course from database when user selects Yes.
+                if (DeleteMessage == MessageBoxResult.Yes)
+                {
+                    TecnohispanoDb.Courses.Remove(Course);
+                    TecnohispanoDb.SaveChanges();
+                }
+
+                // 4. Refresh current window
+                Cursos NewCursos = new Cursos();
+                NewCursos.Show();
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error inesperado. Detalles del error: " + ex.Message,
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+            }
         }
     }
 }
