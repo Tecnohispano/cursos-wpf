@@ -1,4 +1,9 @@
-﻿using System.Windows;
+﻿using Cursos_WPF.Model;
+using Cursos_WPF.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Documents;
 
 namespace Cursos_WPF
 {
@@ -7,9 +12,18 @@ namespace Cursos_WPF
     /// </summary>
     public partial class Usuarios : Window
     {
+        private readonly TecnohispanoEntities TecnohispanoDb;
+
+        /// <summary>
+        /// Constructor.
+        /// It creates a new TecnohispanoEntities so database operations can be performed.
+        /// </summary>
         public Usuarios()
         {
             InitializeComponent();
+            TecnohispanoDb = new TecnohispanoEntities();
+
+            CmbTipoUsuario.ItemsSource = GetUserTypes();
         }
 
 
@@ -38,6 +52,33 @@ namespace Cursos_WPF
             CursosWindow.Show();
 
             this.Close();
+        }
+
+
+        /// <summary>
+        /// This function returns all the available user Types.
+        /// </summary>
+        /// <returns></returns>
+        private List<string> GetUserTypes()
+        {
+            List<string> UserTypes = new List<string>();
+
+            try
+            {
+                foreach (UserType UserType in TecnohispanoDb.UserTypes)
+                {
+                    UserTypes.Add(UserType.TypeName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error inesperado. Detalles del error: " + ex.Message,
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+            }
+
+            return UserTypes;
         }
     }
 }

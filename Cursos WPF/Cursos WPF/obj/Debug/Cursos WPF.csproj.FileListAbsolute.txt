@@ -46,3 +46,4 @@ C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Curso
 C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.CopyComplete
 C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.exe
 C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.pdb
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csprojAssemblyReference.cache

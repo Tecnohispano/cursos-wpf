@@ -41,7 +41,7 @@
             <StackPanel>
                 <Label Content="Gestión de Cursos" FontSize="30" FontWeight="Bold"></Label>
                 <!-- Formulario de creacion -->
-                <Grid Background="LightBlue">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>

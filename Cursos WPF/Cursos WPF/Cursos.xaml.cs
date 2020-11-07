@@ -169,10 +169,10 @@ namespace Cursos_WPF
         /// <returns></returns>
         private List<CourseViewModel> GetCourses()
         {
+            List<CourseViewModel> Courses = new List<CourseViewModel>();
+
             try
             {
-                List<CourseViewModel> Courses = new List<CourseViewModel>();
-
                 foreach (Course Curso in TecnohispanoDb.Courses)
                 {
                     CourseViewModel _Curso = new CourseViewModel()
@@ -197,13 +197,16 @@ namespace Cursos_WPF
 
                     Courses.Add(_Curso);
                 }
-
-                return Courses;
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Ocurrió un error inesperado. Detalles del error: " + ex.Message,
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
             }
+
+            return Courses;
         }
 
         /// <summary>

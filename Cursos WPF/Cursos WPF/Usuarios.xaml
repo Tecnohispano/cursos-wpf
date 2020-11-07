@@ -35,9 +35,51 @@
 
         </Grid>
         <Separator Height="50" Margin="20,0"/>
+        
         <!-- CONTENIDO -->
         <Grid Height="550" Margin="10,0">
+            <StackPanel>
+                <Label Content="Gestión de Usuarios" FontSize="30" FontWeight="Bold"></Label>
+                <!-- Formulario de creacion -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Primer columna -->
+                    <StackPanel Grid.Column="0" Margin="10">
+                        <Label Content="Nombre completo"></Label>
+                        <TextBox x:Name="Nombre" ></TextBox>
+                    </StackPanel>
 
+                    <!-- Segunda columna -->
+                    <StackPanel Grid.Column="1" Margin="10">
+                        <Label Content="Correo electrónico"></Label>
+                        <TextBox x:Name="Correo" ></TextBox>
+                    </StackPanel>
+
+                    <!-- Tercer columna -->
+                    <StackPanel Grid.Column="2" Margin="10">
+                        <Label Content="Contraseña"></Label>
+                        <PasswordBox x:Name="Contrasenia" />
+                    </StackPanel>
+
+                    <!-- Cuarta columna -->
+                    <StackPanel Grid.Column="3" Margin="10">
+                        <Label Content="Tipo de usuario"></Label>
+                        <ComboBox x:Name="CmbTipoUsuario" />
+                    </StackPanel>
+
+                    <!-- Quinta columna -->
+                    <StackPanel Grid.Column="4" Margin="10">
+                        <Button x:Name="btnAgregar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White">Agregar</Button>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
         </Grid>
 
         <!-- Footer -->
