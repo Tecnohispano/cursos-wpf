@@ -272,16 +272,55 @@ namespace Cursos_WPF
         /// <param name="e"></param>
         private void Editar_Click(object sender, RoutedEventArgs e)
         {
-            CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
+            try
+            {
+                CourseViewModel Curso = ((FrameworkElement)sender).DataContext as CourseViewModel;
 
-            // 1. Find course in database
+                // 1. Find course in database
+                Course Course = TecnohispanoDb.Courses.Find(Curso.CourseId);
 
-            // 2. Fill out the form
+                if (Course != null && Course.CourseId > 0)
+                {
+                    // 2. Fill out the form
+                    CourseId.Text = Course.CourseId.ToString();
+                    Nombre.Text = Course.Name;
+                    Enlace.Text = Course.Link;
+                    LimiteParticipantes.Text = Course.ParticipantsLimit.ToString();
+                    StartDate.SelectedDate = Course.StartDate;
+                    EndDate.SelectedDate = Course.EndDate;
+                    StartTime.SelectedIndex = Course.StartTime.Hours;
+                    EndTime.SelectedIndex = Course.EndTime.Hours;
+                    ChkLunes.IsChecked = Course.IsMonday;
+                    ChkMartes.IsChecked = Course.IsTuesday;
+                    ChkMiercoles.IsChecked = Course.IsWednesday;
+                    ChkJueves.IsChecked = Course.IsThursday;
+                    ChkViernes.IsChecked = Course.IsFriday;
+                    ChkSabado.IsChecked = Course.IsSaturday;
+                    ChkDomingo.IsChecked = Course.IsSunday;
 
-            // 3. Show Edit and Cancel button and hide Add button.
-            btnEditar.Visibility = Visibility.Visible;
-            btnCancelar.Visibility = Visibility.Visible;
-            btnAgregar.Visibility = Visibility.Hidden;
+                    ChkActivo.IsChecked = Course.Active;
+
+                    // 3. Show Edit and Cancel button and hide Add button. Shows Checkbox to indicate Status.
+                    btnEditar.Visibility = Visibility.Visible;
+                    btnCancelar.Visibility = Visibility.Visible;
+                    btnAgregar.Visibility = Visibility.Hidden;
+                    ChkActivo.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al momento de buscar el curso.",
+                                "Editar curso",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado. Intenta más tarde. Error: " + ex.Message,
+                                "Editar curso",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+            }
         }
 
         /// <summary>
@@ -291,15 +330,7 @@ namespace Cursos_WPF
         /// <param name="e"></param>
         private void Editar_Confirm_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Edit the selected course.
-
-            // 1. Get info from form.
-
-            // 2. Validate fields.
-
-            // 3. Update course from database.
-
-            // 4. Refresh current window.
+            
         }
 
         /// <summary>

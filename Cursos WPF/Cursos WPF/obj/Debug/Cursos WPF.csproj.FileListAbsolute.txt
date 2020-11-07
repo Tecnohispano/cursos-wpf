@@ -22,3 +22,28 @@ C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debu
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.CopyComplete
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.exe
 C:\Users\com-f\Documents\GitHub\csharp\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.pdb
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\Cursos WPF.exe.config
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\Cursos WPF.exe
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\Cursos WPF.pdb
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\EntityFramework.dll
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\EntityFramework.xml
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csprojAssemblyReference.cache
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos.g.cs
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Home.g.cs
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Usuarios.g.cs
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\App.g.cs
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF_Content.g.cs
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF_MarkupCompile.cache
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF_MarkupCompile.lref
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos.baml
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Home.baml
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Usuarios.baml
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.g.resources
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos_WPF.Properties.Resources.resources
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.GenerateResource.cache
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.CoreCompileInputs.cache
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csproj.CopyComplete
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.exe
+C:\Users\iniguez.13\OneDrive - Teleperformance\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.pdb
