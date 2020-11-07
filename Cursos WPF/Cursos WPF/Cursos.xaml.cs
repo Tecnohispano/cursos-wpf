@@ -330,7 +330,55 @@ namespace Cursos_WPF
         /// <param name="e"></param>
         private void Editar_Confirm_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                // 1. Apply validations
+                if (!ValidForm())
+                {
+                    return;
+                }
+
+                // 2. Find course in database
+                Course Course = TecnohispanoDb.Courses.Find(Int32.Parse(CourseId.Text));
+
+                // 3. Update all fields
+                Course.Name = Nombre.Text;
+                Course.Link = Enlace.Text;
+                Course.StartDate = StartDate.SelectedDate.Value;
+                Course.EndDate = EndDate.SelectedDate.Value;
+                Course.StartTime = TimeSpan.Parse(StartTime.Text);
+                Course.EndTime = TimeSpan.Parse(EndTime.Text);
+                Course.IsMonday = ChkLunes.IsChecked.Value;
+                Course.IsTuesday = ChkMartes.IsChecked.Value;
+                Course.IsWednesday = ChkMiercoles.IsChecked.Value;
+                Course.IsThursday = ChkJueves.IsChecked.Value;
+                Course.IsFriday = ChkViernes.IsChecked.Value;
+                Course.IsSaturday = ChkSabado.IsChecked.Value;
+                Course.IsSunday = ChkDomingo.IsChecked.Value;
+                Course.ParticipantsLimit = Int32.Parse(LimiteParticipantes.Text);
+                Course.Active = ChkActivo.IsChecked.Value;
+
+                // 4. Save changes to database
+                TecnohispanoDb.SaveChanges();
+
+                MessageBox.Show("Curso editado exitosamente",
+                        "Curso agregado",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                // 4. Refresh current window
+                Cursos NewCursos = new Cursos();
+                NewCursos.Show();
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado. Por favor intenta más tarde. Error: " + ex.Message,
+                        "Editar curso",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+            }
         }
 
         /// <summary>
