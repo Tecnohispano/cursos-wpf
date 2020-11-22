@@ -1,9 +1,7 @@
 ﻿using Cursos_WPF.Model;
-using Cursos_WPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
 
 namespace Cursos_WPF
 {
@@ -56,29 +54,42 @@ namespace Cursos_WPF
 
 
         /// <summary>
-        /// This function returns all the available user Types.
+        /// This function gets all the user types.
         /// </summary>
         /// <returns></returns>
         private List<string> GetUserTypes()
         {
             List<string> UserTypes = new List<string>();
 
-            try
+            foreach(UserType _UserType in TecnohispanoDb.UserTypes)
             {
-                foreach (UserType UserType in TecnohispanoDb.UserTypes)
-                {
-                    UserTypes.Add(UserType.TypeName);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error inesperado. Detalles del error: " + ex.Message,
-                            "Error",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                UserTypes.Add(_UserType.TypeName);
             }
 
             return UserTypes;
+        }
+
+
+        /// <summary>
+        /// This function creates a new user using the Hashing SHA256 algorithms.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Agregar_Click(object sender, RoutedEventArgs e)
+        {
+            // 0. Traerme los datos del formulario
+            string NombreCompleto = PrimerNombre.Text + " " +
+                                    SegundoNombre.Text + " " +
+                                    ApellidoPaterno.Text + " " +
+                                    ApellidoMaterno.Text;
+            string CorreoElectronico = Correo.Text;
+            string ContraseniaUsuario = Contrasenia.Password;
+            string TipoUsuario = CmbTipoUsuario.SelectedItem.ToString();
+
+            // 1. Validar datos correctos
+            // 2. Crear modelo Usuario
+            // 3. Save()
+            // 4. Refresh window
         }
     }
 }

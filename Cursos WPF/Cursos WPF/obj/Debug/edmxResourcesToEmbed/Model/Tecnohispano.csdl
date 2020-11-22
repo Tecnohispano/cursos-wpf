@@ -54,8 +54,6 @@
   <EntityType Name="UserType">
     <Key>
       <PropertyRef Name="TypeId" />
-      <PropertyRef Name="TypeName" />
-      <PropertyRef Name="Active" />
     </Key>
     <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />

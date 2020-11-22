@@ -52,8 +52,14 @@
                     
                     <!-- Primer columna -->
                     <StackPanel Grid.Column="0" Margin="10">
-                        <Label Content="Nombre completo"></Label>
-                        <TextBox x:Name="Nombre" ></TextBox>
+                        <Label Content="Primer nombre"></Label>
+                        <TextBox x:Name="PrimerNombre"></TextBox>
+                        <Label Content="Segundo nombre" Margin="0, 15, 0, 0"></Label>
+                        <TextBox x:Name="SegundoNombre"></TextBox>
+                        <Label Content="Apellido paterno" Margin="0, 15, 0, 0"></Label>
+                        <TextBox x:Name="ApellidoPaterno"></TextBox>
+                        <Label Content="Apellido materno" Margin="0, 15, 0, 0"></Label>
+                        <TextBox x:Name="ApellidoMaterno"></TextBox>
                     </StackPanel>
 
                     <!-- Segunda columna -->
@@ -76,7 +82,7 @@
 
                     <!-- Quinta columna -->
                     <StackPanel Grid.Column="4" Margin="10">
-                        <Button x:Name="btnAgregar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White">Agregar</Button>
+                        <Button x:Name="btnAgregar" Height="20" Width="80" VerticalAlignment="Top" Margin="0, 20" Background="Green" Foreground="White" Click="Agregar_Click">Agregar</Button>
                     </StackPanel>
                 </Grid>
             </StackPanel>

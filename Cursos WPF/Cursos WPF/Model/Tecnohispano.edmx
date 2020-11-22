@@ -65,8 +65,6 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
         <EntityType Name="UserType">
           <Key>
             <PropertyRef Name="TypeId" />
-            <PropertyRef Name="TypeName" />
-            <PropertyRef Name="Active" />
           </Key>
           <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
@@ -160,8 +158,6 @@ warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary
         <EntityType Name="UserType">
           <Key>
             <PropertyRef Name="TypeId" />
-            <PropertyRef Name="TypeName" />
-            <PropertyRef Name="Active" />
           </Key>
           <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
