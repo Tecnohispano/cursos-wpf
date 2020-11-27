@@ -27,7 +27,7 @@ namespace Cursos_WPF.Model
     
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<RelUserCourse> RelUserCourses { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserType> UserTypes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

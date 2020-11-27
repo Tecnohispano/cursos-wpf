@@ -7,8 +7,8 @@
       <Diagram DiagramId="cbdd1bb6d0e5457c84c08962491e74bc" Name="Diagram1">
         <EntityTypeShape EntityType="TecnohispanoModel.Course" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnohispanoModel.RelUserCourse" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TecnohispanoModel.User" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnohispanoModel.UserType" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnohispanoModel.User" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
