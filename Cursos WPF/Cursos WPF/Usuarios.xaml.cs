@@ -117,7 +117,13 @@ namespace Cursos_WPF
 
             // 4. TODO: Enviar contrase a correo de Usuario
 
-            // 5. Refresh window
+            // Mostrar mensaje de exito
+            MessageBox.Show("Usuario agregado exitosamente",
+                        "Nuevo usuario",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+
+            // 6. Refresh window
             Usuarios NewUsuarios = new Usuarios();
             NewUsuarios.Show();
 

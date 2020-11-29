@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TecnohispanoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="IsMonday" Type="Boolean" Nullable="false" />
+    <Property Name="IsTuesday" Type="Boolean" Nullable="false" />
+    <Property Name="IsWednesday" Type="Boolean" Nullable="false" />
+    <Property Name="IsThursday" Type="Boolean" Nullable="false" />
+    <Property Name="IsFriday" Type="Boolean" Nullable="false" />
+    <Property Name="IsSaturday" Type="Boolean" Nullable="false" />
+    <Property Name="IsSunday" Type="Boolean" Nullable="false" />
+    <Property Name="ParticipantsLimit" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RelUserCourse">
+    <Key>
+      <PropertyRef Name="RelUserCourseId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="RelUserCourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TecnohispanoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="RelUserCourses" EntityType="Self.RelUserCourse" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <EntitySet Name="Users" EntityType="TecnohispanoModel.User" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HashedPassword" Type="Binary" Nullable="false" MaxLength="8000" FixedLength="false" />
+    <Property Name="Salt" Type="Binary" Nullable="false" MaxLength="8000" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>
