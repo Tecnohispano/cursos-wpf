@@ -1,4 +1,5 @@
-﻿using Cursos_WPF.Model;
+﻿using Cursos_WPF.Helpers;
+using Cursos_WPF.Model;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -82,8 +83,7 @@ namespace Cursos_WPF
                                     ApellidoPaterno.Text + " " +
                                     ApellidoMaterno.Text;
 
-
-            string TipoUsuario = CmbTipoUsuario.SelectedItem.ToString();
+            int TipoUsuario = CmbTipoUsuario.SelectedIndex + 1;
 
             // 1. Validar datos correctos
             if (!ValidarForm())
@@ -98,7 +98,7 @@ namespace Cursos_WPF
 
             User NewUser = new User()
             {
-                TypeId = 2, // TODO: Obtener TypeId correcto
+                TypeId = TipoUsuario,
                 Name = NombreCompleto,
                 Email = Correo.Text,
                 Username = Correo.Text,
@@ -111,10 +111,17 @@ namespace Cursos_WPF
             TecnohispanoDb.Users.Add(NewUser);
             TecnohispanoDb.SaveChanges();
 
-            // 4. TODO: Enviar contrase a correo de Usuario
+            // 4. Enviar contraseña correo de Usuario
+            string emailStatus = "FALLIDO";
+            string emailSubject = "[Cursos WPF] Nuevo usuario";
+            string emailBody = "Tu cuenta en cursos WPF ha sido creada. Te compartimos tus datos de acceso:\nUsuario: " + Correo.Text + "\nContraseñia: " + NewPassword;
+            if (EmailHelper.SendEmail(Correo.Text, emailSubject, emailBody))
+            {
+                emailStatus = "ENVIADO";
+            }
 
             // Mostrar mensaje de exito
-            MessageBox.Show("Usuario agregado exitosamente",
+            MessageBox.Show("Usuario agregado exitosamente. Estado del correo: " + emailStatus,
                         "Nuevo usuario",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
@@ -133,18 +140,6 @@ namespace Cursos_WPF
         /// <returns></returns>
         private bool ValidarForm()
         {
-            int maxLenght = Contrasenia.MaxLength;
-
-            if (Contrasenia.Password.Length < 8)
-            {
-                MessageBox.Show("Escribe una contrasenia mas larga.",
-                            "Error datos",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-
-                return false;
-            }
-
             if (CmbTipoUsuario.SelectedItem == null)
             {
                 MessageBox.Show("Selecciona un tipo de usuario",
@@ -155,7 +150,7 @@ namespace Cursos_WPF
                 return false;
             }
 
-            // TODO: Agrar mas validaciones
+            // TODO: Add more validations.
 
             return true;
         }

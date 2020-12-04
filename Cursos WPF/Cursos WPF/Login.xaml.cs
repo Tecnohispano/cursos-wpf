@@ -17,6 +17,12 @@ namespace Cursos_WPF
             TecnohispanoDb = new TecnohispanoEntities();
         }
 
+
+        /// <summary>
+        /// This function executes the validations over the input user to access or deny .
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             // 1. Validaciones
@@ -89,8 +95,6 @@ namespace Cursos_WPF
                         Salt = _Usuario.Salt,
                         Active = _Usuario.Active
                     };
-
-                    string temp = Encoding.UTF8.GetString(Resultado.HashedPassword, 0, Resultado.HashedPassword.Length);
                 }
             }
 

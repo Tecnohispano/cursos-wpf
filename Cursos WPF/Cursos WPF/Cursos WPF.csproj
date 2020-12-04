@@ -68,6 +68,7 @@
       <DependentUpon>Cursos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AccesosHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
