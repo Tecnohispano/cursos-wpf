@@ -32,6 +32,7 @@ C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\bin\Deb
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.csprojAssemblyReference.cache
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos.g.cs
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Home.g.cs
+C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Login.g.cs
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Usuarios.g.cs
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\App.g.cs
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF_Content.g.cs
@@ -39,6 +40,7 @@ C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Deb
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF_MarkupCompile.lref
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos.baml
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Home.baml
+C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Login.baml
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Usuarios.baml
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos WPF.g.resources
 C:\Users\freddyiniguez\Documents\GitHub\cursos-wpf\Cursos WPF\Cursos WPF\obj\Debug\Cursos_WPF.Properties.Resources.resources

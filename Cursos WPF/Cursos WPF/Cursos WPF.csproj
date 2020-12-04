@@ -67,6 +67,10 @@
     <Compile Include="Cursos.xaml.cs">
       <DependentUpon>Cursos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AccesosHelper.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Course.cs">
       <DependentUpon>Tecnohispano.tt</DependentUpon>
     </Compile>
@@ -116,6 +120,10 @@
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Usuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

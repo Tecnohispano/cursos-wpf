@@ -1,0 +1,19 @@
+﻿<Window x:Class="Cursos_WPF.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cursos_WPF"
+        mc:Ignorable="d"
+        Title="Iniciar sesión" Height="350" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <Image Source="Images/cursos-wpf.png" Width="80" Margin="0, 10, 0, 30"></Image>
+            <Label HorizontalAlignment="Center">Correo electrónico</Label>
+            <TextBox x:Name="CorreoElectronico" Width="200"></TextBox>
+            <Label HorizontalAlignment="Center" Margin="0, 10, 0, 0">Contraseñia</Label>
+            <PasswordBox x:Name="Contrasenia" Width="200"></PasswordBox>
+            <Button Background="LightGreen" Width="200" Margin="0, 25, 0, 0" Click="Login_Click">Iniciar sesión</Button>
+        </StackPanel>
+    </Grid>
+</Window>
