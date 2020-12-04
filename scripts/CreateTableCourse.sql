@@ -23,7 +23,7 @@ CREATE TABLE [dbo].[Course](
 	[IsFriday] [bit] NOT NULL,
 	[IsSaturday] [bit] NOT NULL,
 	[IsSunday] [bit] NOT NULL,
-	[ParticipantsLimit] [bit] NOT NULL,
+	[ParticipantsLimit] [int] NOT NULL,
 	[Active] [bit] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TecnohispanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Link" Type="varchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="IsMonday" Type="bit" Nullable="false" />
+    <Property Name="IsTuesday" Type="bit" Nullable="false" />
+    <Property Name="IsWednesday" Type="bit" Nullable="false" />
+    <Property Name="IsThursday" Type="bit" Nullable="false" />
+    <Property Name="IsFriday" Type="bit" Nullable="false" />
+    <Property Name="IsSaturday" Type="bit" Nullable="false" />
+    <Property Name="IsSunday" Type="bit" Nullable="false" />
+    <Property Name="ParticipantsLimit" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.RelUserCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RelUserCourse">
+    <Key>
+      <PropertyRef Name="RelUserCourseId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="RelUserCourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HashedPassword" Type="varbinary" MaxLength="8000" Nullable="false" />
+    <Property Name="Salt" Type="varbinary" MaxLength="8000" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Tecnohispano.dbo.UserType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TecnohispanoModelStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelUserCourse" EntityType="Self.RelUserCourse" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RelUserCourse].[RelUserCourseId] AS [RelUserCourseId], 
+    [RelUserCourse].[UserId] AS [UserId], 
+    [RelUserCourse].[CourseId] AS [CourseId]
+    FROM [dbo].[RelUserCourse] AS [RelUserCourse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserType" EntityType="Self.UserType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserType].[TypeId] AS [TypeId], 
+    [UserType].[TypeName] AS [TypeName], 
+    [UserType].[Active] AS [Active]
+    FROM [dbo].[UserType] AS [UserType]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
